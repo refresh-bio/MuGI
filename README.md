@@ -1,19 +1,5 @@
 ##MuGI - **Mu**ltiple **G**enome **I**ndex
 
-###Getting Started 
-
-```
-# Clone repository
-git clone https://github.com/refresh-bio/mugi.git
-# Build 
-cd tgc
-cd src
-make
-cd ..
-# Repeat experiments described in the publication
-./run -abcdefgijklcd tgc
-```
-
 
 ###MuGI—What is it?
 
