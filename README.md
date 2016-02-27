@@ -1,4 +1,4 @@
-##MuGI - **Mu**ltiple **G**enome **I**ndex
+#MuGI - **Mu**ltiple **G**enome **I**ndex
 
 
 ###MuGI—What is it?
@@ -32,11 +32,11 @@ The MuGI algorithm was invented by Agnieszka Danek, Sebastian Deorowicz, and Szy
 The implementation is by [Agnieszka Danek](https://github.com/agnieszkadanek).
 
 
-###Usage
+# Usage (build, search, parse, genEx)
 
 Here we describe the usage of the tools to build the index (MuGI_build), perform the search (MuGI_search), and parse the result to a readable form (MuGI_parse). We also provide a code generating example queries (MuGI_exGen). All these tools are implemented in C/C++.
 
-## MuGI build
+#### MuGI build
 The program builds the index with set sparsity and length of k-mers, based on the input refer- ence sequence and Variant Call Format (VCF) file describing the differences between individual genomes and reference genome.
 
 Usage:
@@ -60,7 +60,7 @@ If the ploidity is set to 2, any haploid genotype call is treated as diploid. Th
  
 For testing we implemented the possibility to build few indexes with the same k-mer length and different sparsities (from 1 up to < sp >) at the same run. To use this mode, CREATE_ALL_INDEXES must be defined in the defs.h file (see line 14 of defs.h).
 
-##  MuGI search
+####  MuGI search
 The program performs the search of the input queries in the compressed collection (input index file) and reports to the stdout statistics about queries execution times. Asmlib library (http://www.agner.org/optimize/asmlib.zip) is required to build the sources.
 
 Usage:
@@ -75,7 +75,7 @@ exact search)
 The output file:
 + ```result.out``` — binary file with the result
 
-## MuGI parse
+#### MuGI parse
 The program parses the binary file with result (output of MuGI_search) and creates a text file with readable data.
 For each queries, at first its name (for FASTQ and FASTA) or ordinal number (for simple list) is written. Then, all found positions are reported (chromosome number and position within it) along with list of all individuals in which the match was found. In a ”hex” mode (0), the list is represented by a bit vector written in a hexadecimal form, where each jth bit set corresponds to match found in jth haploid genome. In the ”full” mode (1) the list consist of names of all individuals with the match. For diploid individuals, to distinguish between two haploid sequences of each, a suffix ”-1” or ”-2” is added to the name. In the bit vector representation, each diploid individual is represented by two consecutive bits.
 
@@ -88,7 +88,7 @@ Parameters:
 + ```output_file``` — name of the output file
 + ```mode``` — optional, mode of the output: 0 (hexadecimal individuals representation) or 1 (full individual names) default: 0
   
-## MuGI genEx
+#### MuGI genEx
 The program generates a file with a set number of queries. The file an be in FASTQ or FASTA format, or be a text file with list of sequences (three acceptable formats of queries for MuGI_search). It uses the created index file, to take an excerpts from the collection of genomes. As only Reference (REF), Variant Database (VD) and Bit Vectors (BV) are used, the k and sp parameters of the index building process does not matter. The final queries are made as described in the main paper.
 
 Usage:
