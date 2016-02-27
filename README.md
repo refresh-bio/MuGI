@@ -1,0 +1,2 @@
+# MuGI
+Multiple Genome Index
