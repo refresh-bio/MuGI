@@ -1,0 +1,12 @@
+This is a MuGI software distributed under GNU GPL 2 licence.
+
+The homepage of the MuGI project is http://sun.aei.polsl.pl/mugi/ 
+Authors: Agnieszka Danek, Sebastian Deorowicz
+Version: 1.0
+Date   : 2015-Mar
+
+The software uses the following libraries (included):
+
+1. Intel Threading Building Blocks library (https://www.threadingbuildingblocks.org) under GNU GPL 2 licence.
+2. The Asmlib library (http://www.agner.org/optimize/asmlib.zip) under GNU GPL 3 license
+

@@ -1,0 +1,6 @@
+It is a program to preprocess the VCF file fo Y chromosome available from the Phase 1 of the 1000GP to have consistent data with one diploid representation for the whole reference.
+
+It removes the additional (NA21313) individual data and artificially extend the list of genomes described in the VCF file of chromosome Y to be the same as for other chromosomes, that is, to include female individuals. The alleles values are set to zero (reference allele) in the genotype fields.
+
+
+

@@ -1,0 +1,12 @@
+To build the INDEX_search sources, the Asmlib library is needed. 
+
+It can be downloaded from: http://www.agner.org/optimize/asmlib.zip 
+More instruction on how to use the library are also available there.
+
+The LIB variable in the Makefile should point to the working library.
+
+
+
+
+
+

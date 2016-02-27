@@ -1,0 +1,60 @@
+# 1 "../../src/tbbmalloc/lin64-tbbmalloc-export.def"
+# 1 "/mnt/syn2/adanek/MuGI/MuGI/IDX_build/tbb/build/linux_intel64_gcc_cc4.6.2_libc2.14.90_kernel3.6.10_debug//"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "../../src/tbbmalloc/lin64-tbbmalloc-export.def"
+# 29 "../../src/tbbmalloc/lin64-tbbmalloc-export.def"
+{
+global:
+
+scalable_calloc;
+scalable_free;
+scalable_malloc;
+scalable_realloc;
+scalable_posix_memalign;
+scalable_aligned_malloc;
+scalable_aligned_realloc;
+scalable_aligned_free;
+__TBB_internal_calloc;
+__TBB_internal_free;
+__TBB_internal_malloc;
+__TBB_internal_realloc;
+__TBB_internal_posix_memalign;
+scalable_msize;
+scalable_allocation_mode;
+
+
+_ZN3rml11pool_createElPKNS_13MemPoolPolicyE;
+_ZN3rml14pool_create_v1ElPKNS_13MemPoolPolicyEPPNS_10MemoryPoolE;
+_ZN3rml10pool_resetEPNS_10MemoryPoolE;
+_ZN3rml11pool_mallocEPNS_10MemoryPoolEm;
+_ZN3rml12pool_destroyEPNS_10MemoryPoolE;
+_ZN3rml9pool_freeEPNS_10MemoryPoolEPv;
+_ZN3rml12pool_reallocEPNS_10MemoryPoolEPvm;
+_ZN3rml20pool_aligned_reallocEPNS_10MemoryPoolEPvmm;
+_ZN3rml19pool_aligned_mallocEPNS_10MemoryPoolEmm;
+
+local:
+
+
+*3rml*;
+*3tbb*;
+*__TBB*;
+__itt_*;
+ITT_DoOneTimeInitialization;
+TBB_runtime_interface_version;
+
+
+__intel_*;
+_intel_*;
+get_memcpy_largest_cachelinesize;
+get_memcpy_largest_cache_size;
+get_mem_ops_method;
+init_mem_ops_method;
+irc__get_msg;
+irc__print;
+override_mem_ops_method;
+set_memcpy_largest_cachelinesize;
+set_memcpy_largest_cache_size;
+
+};

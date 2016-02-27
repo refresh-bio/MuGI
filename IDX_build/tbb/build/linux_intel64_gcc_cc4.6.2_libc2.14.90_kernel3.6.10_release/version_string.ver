@@ -1,0 +1,11 @@
+#define __TBB_VERSION_STRINGS(N) \
+#N": BUILD_HOST\t\tursa (x86_64)" ENDL \
+#N": BUILD_OS\t\tFedora release 16 (Verne)" ENDL \
+#N": BUILD_KERNEL\tLinux 3.6.10-2.fc16.x86_64 #1 SMP Tue Dec 11 18:55:03 UTC 2012" ENDL \
+#N": BUILD_GCC\t\tgcc version 4.6.2 20111027 (Red Hat 4.6.2-1) (GCC) " ENDL \
+#N": BUILD_LIBC\t2.14.90" ENDL \
+#N": BUILD_LD\t\tGNU ld version 2.21.53.0.1-6.fc16 20110716" ENDL \
+#N": BUILD_TARGET\tintel64 on cc4.6.2_libc2.14.90_kernel3.6.10" ENDL \
+#N": BUILD_COMMAND\tg++ -DDO_ITT_NOTIFY -g -O2 -DUSE_PTHREAD -m64 -fPIC -D__TBB_BUILD=1 -Wall -Wno-parentheses -Wno-non-virtual-dtor -I../../src -I../../src/rml/include -I../../include" ENDL \
+
+#define __TBB_DATETIME "Thu Mar 27 19:23:19 UTC 2014"
