@@ -23,7 +23,8 @@ int32_t compareReadSuffix(unsigned char* read, uint32_t lenToCheck, suffix1 suff
     uint32_t vtNo = 0,m, l, r; // l = 0, r = noVar-1, m;
     
 
-    uint32_t temp = suffix.prevPos/VT_LUT_STEP;
+    uint32_t temp = (suffix.prevPos != 0xFFFFFFFF)? suffix.prevPos/VT_LUT_STEP: 0;
+
 
     
     

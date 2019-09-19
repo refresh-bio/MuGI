@@ -237,9 +237,9 @@ int32_t main(int32_t argc, const char * argv[])
     
  
     fread(&temp, sizeof(uint32_t), 1, in);
-    VT_LUT = (uint32_t * ) malloc ((uint32_t)(refSize/VT_LUT_STEP) * sizeof(uint32_t));
+    VT_LUT = (uint32_t * ) malloc ((uint32_t)(refSize/VT_LUT_STEP+1) * sizeof(uint32_t));
     fread(VT_LUT, sizeof(uint32_t), refSize/VT_LUT_STEP, in);
-    
+    VT_LUT[refSize/VT_LUT_STEP] = noVar; //guard
     
     fread(&inBitV, sizeof(uint32_t), 1, in);
     fread(&ploidity, sizeof(uint32_t), 1, in);
@@ -929,7 +929,7 @@ int32_t main(int32_t argc, const char * argv[])
     free(LUT3);
     
     
-    
+    fclose(RESULT);
     
     delete all_var ;
     delete uniq_var;
@@ -956,7 +956,7 @@ uint64_t checkVTconfigurationExact(uint32_t prePos,  uint32_t noVt,  uint32_t fi
     
     uint32_t * temp_vtToCheck;
     bool goodPath, currPathValid = true;;
-    uint32_t last = 0, len, delLen, insLen ;
+    uint32_t last = 0, len = 0, delLen = 0, insLen = 0;
     uint32_t newRefPos;
     
     uint32_t patternLen = readLen-delta;
@@ -2012,7 +2012,7 @@ uint64_t checkVTconfiguration1(uint32_t prePos,  uint32_t noVt,  uint32_t firstV
     
     uint32_t * temp_vtToCheck;
     bool goodPath, currPathValid = true;;
-    uint32_t last = 0, len, delLen, insLen ;
+    uint32_t last = 0, len = 0, delLen = 0, insLen = 0;
     uint32_t newRefPos;
     
     uint32_t patternLen = readLen-delta;
@@ -3918,10 +3918,11 @@ uint32_t getCoveredVariants(uint32_t  prevPos,  uint32_t * vtListLoc, uint32_t *
     ///BINARY SEARCH FOR FIRST VT
     uint32_t vtNo = 0,  m, l, r; //l = 0, r = noVar-1, m;
     
+    uint32_t temp = (prevPos != 0xFFFFFFFF)? prevPos/VT_LUT_STEP: 0;
     if(refSize >= VT_LUT_STEP)
     {
-        l = VT_LUT[prevPos/VT_LUT_STEP];
-        r = VT_LUT[prevPos/VT_LUT_STEP+1];
+        l = VT_LUT[temp++];
+        r = VT_LUT[temp];
     }
     else
     {
@@ -4200,10 +4201,11 @@ uint32_t getCoveredVariants(uint32_t  prevPos,  uint32_t vtListLoc, uint32_t * f
     uint32_t vtNo = 0,  m, l, r;
 
     
+    uint32_t temp = (prevPos != 0xFFFFFFFF)? prevPos/VT_LUT_STEP: 0;
     if(refSize >= VT_LUT_STEP)
     {
-        l = VT_LUT[prevPos/VT_LUT_STEP];
-        r = VT_LUT[prevPos/VT_LUT_STEP+1];
+        l = VT_LUT[temp++];
+        r = VT_LUT[temp];
     }
     else
     {

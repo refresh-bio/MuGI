@@ -28,11 +28,12 @@ int32_t compareReadSuffix(unsigned char* read, uint32_t lenToCheck, suffix2 suff
     uint32_t vtNo = 0, l, r, m;
  
 
+    uint32_t temp = (suffix.prevPos != 0xFFFFFFFF)? suffix.prevPos/VT_LUT_STEP: 0;
     
     if(refSize >= VT_LUT_STEP)
     {
-        l = VT_LUT[suffix.prevPos/VT_LUT_STEP];
-        r = VT_LUT[suffix.prevPos/VT_LUT_STEP+1];
+        l = VT_LUT[temp++];
+        r = VT_LUT[temp];
     }
     else
     {

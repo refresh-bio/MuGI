@@ -458,8 +458,7 @@ uint32_t getCoveredVariantsSA(uint32_t  prevPos,  uint32_t * firstVar,  uint32_t
     uint32_t vtNo = 0,  m, l, r;
     
     
-    temp = prevPos/VT_LUT_STEP;
-    if(refSize >= VT_LUT_STEP)
+    temp = (prevPos != 0xFFFFFFFF)? prevPos/VT_LUT_STEP: 0;    if(refSize >= VT_LUT_STEP)
     {
         l = VT_LUT[temp++];
         r = VT_LUT[temp];
