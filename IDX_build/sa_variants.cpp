@@ -32,7 +32,8 @@ int SAVariants::make_sa_variants(VariantList * _vl, BitVectors * _bv, CFastaFile
     
     //for first variant and zero position
     uint32_t i = 0;
-    while(vl->getPos(i) == 0xFFFFFFFF) //wariants at first pos, so prePos = -1, uint: 0xFFFFFFFF)
+    while((vl->getPos(i) == 0xFFFFFFFF) || vl->getPos(i) <= (kl-1)) //wariants at first pos OR up to kl, so prePos = -1, uint: 0xFFFFFFFF)
+
     {
         if(i > logTreshold)
         {
