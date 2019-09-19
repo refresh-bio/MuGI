@@ -35,9 +35,10 @@ SA_index::~SA_index()
 {
     
    // delete [] s_ch;
-    if(LUT) free(LUT);
+    if(LUT)
+    { free(LUT); LUT = NULL;}
     if(SA)
-        delete [] SA;
+    { delete [] SA; SA  = NULL;}
 }
 
 
@@ -62,10 +63,8 @@ int SA_index::make_sa(CFastaFile * fasta)
 //	fprintf(stderr, "Allocating input and output space: %llu bytes = %.2lf MB", (uint64) 4*n, (double)4*n/1024/1024);
 //	s_ch=new unsigned char[n];
 	unsigned int * SA_temp = new unsigned int[n];
-	//if(s_ch==NULL || SA==NULL) {
     if( SA_temp==NULL) {
-        //    delete [] s_ch;
-        delete [] SA_temp;
+        
 		fprintf(stderr, "\nInsufficient memory, exit!");
 		return 0;
 	}

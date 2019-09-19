@@ -25,13 +25,13 @@ private:
     unsigned int suffixArray2Max;
     uint32_t filtered;
     
-    unsigned int *LUT;
-    suffix2 * suffixArray2;
+    unsigned int *LUT = NULL;
+    suffix2 * suffixArray2 = NULL;
     
     
 public:
     SA2(){n_sparse = 1; suffixArray2Count = 0; suffixArray2Max = 0; filtered = 0;}
-    ~SA2(){if(suffixArray2) free(suffixArray2);if(LUT) free(LUT);};
+    ~SA2(){if(suffixArray2){ free(suffixArray2); suffixArray2 = NULL;} if(LUT) {free(LUT); LUT = NULL;}}
     SA2(uint32_t sparse, uint32_t _max);
 	
     

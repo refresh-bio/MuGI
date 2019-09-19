@@ -30,13 +30,13 @@ private:
     unsigned int suffixArray3Max;
     uint32_t filtered;
     
-    unsigned int *LUT;
-    suffix3 * suffixArray3;
+    unsigned int *LUT = NULL;
+    suffix3 * suffixArray3 = NULL;
     
     
 public:
     SA3(){n_sparse = 1; suffixArray3Count = 0; suffixArray3Max = 0; filtered = 0;}
-    ~SA3(){if(suffixArray3) free(suffixArray3);if(LUT) free(LUT);};
+    ~SA3(){if(suffixArray3){ free(suffixArray3); suffixArray3 = NULL;} if(LUT){ free(LUT); LUT = NULL;}}
     SA3(uint32_t sparse, uint32_t _max);
 
     unsigned int suffixArray3Count;

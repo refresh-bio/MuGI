@@ -364,6 +364,8 @@ int BitVectors::createCompressedCollection(uint32_t _blocking)
     }
     delete bit_var;
     bit_var = NULL;
+    
+    return 0;
 }
 
 void BitVectors::writeCompressedCollectionToFile(FILE * file)

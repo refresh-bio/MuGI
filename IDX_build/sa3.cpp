@@ -118,7 +118,7 @@ void SA3::newSuffix3(unsigned int  prePos,  unsigned int vtListSize, unsigned in
             back++;
         }
         
-        if(!inDelReg)
+        if(!inDelReg && Data::vl->no_sv > 0)
             for(int sv = lastSV; sv >= (int)firstSV; sv--)
             {
                 //if(Data::vt[Data::vl->listSV[sv]].prePos +  Data::vl->getDelLen(Data::vl->listSV[sv]) > prePos)

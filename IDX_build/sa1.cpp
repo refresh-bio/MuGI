@@ -119,7 +119,7 @@ void SA1::newSuffix1(unsigned int  prePos,  unsigned int newVtList, unsigned int
             back++;
         }
         
-        if(!inDelReg)
+        if(!inDelReg && vl->no_sv > 0)
             for(int sv = lastSV; sv >= (int)firstSV; sv--)
             {
                 {

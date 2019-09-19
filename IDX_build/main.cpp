@@ -188,7 +188,7 @@ int main(int argc, const char * argv[])
     // Write LUT and suffix array to the output file
     sa->write_sa(out);
     sa->write_sa_lut(out);
-    sa->~SA_index();
+    delete sa;
     cout << "Suffix array created and written to the output file." << endl;
     fflush(out);
 
@@ -399,7 +399,7 @@ int main(int argc, const char * argv[])
         sa->write_sa_lut(out[i]);
         fflush(out[i]);
     }
-    sa->~SA_index();
+    delete sa;
     cout << "Suffix array created and written to the output file." << endl;
     
     
@@ -443,8 +443,10 @@ int main(int argc, const char * argv[])
      /**/
 
 
-    
-    
+    delete vcf;
+    delete saVar;
+    delete Data::bv;
+    delete Data::vl;
       
     
     

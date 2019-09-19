@@ -33,16 +33,16 @@ private:
     uint32_t filtered;
     uint32_t kl;
     uint32_t no_var;
-    uint32_t * LUT;
-    suffix1 * suffixArray1;
+    uint32_t * LUT = NULL;
+    suffix1 * suffixArray1 = NULL;
     
-    BitVectors * bv;
-    VariantList * vl;
-    CFastaFile * fasta;
+    BitVectors * bv = NULL;
+    VariantList * vl = NULL;
+    CFastaFile * fasta = NULL;
     
 public:
     SA1(){n_sparse = 1; suffixArray1Count = 0; suffixArray1Max = 0; filtered = 0;}
-    ~SA1(){if(suffixArray1) free(suffixArray1);if(LUT) free(LUT);}
+    ~SA1(){if(suffixArray1){ free(suffixArray1); suffixArray1 = NULL;} if(LUT){ free(LUT); LUT = NULL;}}
     SA1(uint32_t sparse, uint32_t _max, uint32_t _kl, uint32_t _no_var,  BitVectors * _bv, VariantList * _vl, CFastaFile * _fasta);
     
     

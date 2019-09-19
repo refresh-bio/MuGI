@@ -576,7 +576,7 @@ bool VCF::ProcessVCFDataPloidity2(VariantList * vl, BitVectors * bv)
                                         endPos[t][temp_int-4] =  info[t][temp_int];
                                         temp_int++;
                                     }
-                                    endPos[j-4]='\0';
+                                    endPos[j-4][0]='\0';
                                 }
                                 else
                                 {
@@ -1370,7 +1370,7 @@ bool VCF::ProcessVCFDataPloidity1(VariantList * vl, BitVectors * bv)
                                         endPos[t][temp_int-4] =  info[t][temp_int];
                                         temp_int++;
                                     }
-                                    endPos[j-4]='\0';
+                                    endPos[j-4][0]='\0';
                                 }
                                 else
                                 {

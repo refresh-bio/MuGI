@@ -30,7 +30,7 @@ using namespace std;
 namespace std{
   
     template<typename T>
-    struct hash<vector<T>>
+    struct hash< vector<T> >
     {
         typedef vector<T> argument_type;
         typedef size_t result_type;
@@ -106,6 +106,14 @@ public:
             }
             delete bit_var;
         }
+        
+        if(uniq_parts)
+        {    free(uniq_parts); uniq_parts = NULL;}
+        if(all_var)
+        {    free(all_var); all_var = NULL;}
+        if(uniq_var)
+        {    free(uniq_var); uniq_var = NULL;}
+        
     }
     
     //genomes names (from VCF)
@@ -130,9 +138,9 @@ public:
     // compressed
     int createCompressedCollection(uint32_t _blocking);
     void writeCompressedCollectionToFile(FILE * file);
-    uint32_t * all_var;
-    uint32_t * uniq_var;
-    uint64_t * uniq_parts;
+    uint32_t * all_var = NULL;
+    uint32_t * uniq_var = NULL;
+    uint64_t * uniq_parts = NULL;
     // compressed collection
     uint32_t blocking;
     uint32_t parts;

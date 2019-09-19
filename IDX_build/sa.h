@@ -27,8 +27,8 @@ private:
     unsigned int n_sparse;
     unsigned int suffix_count;
     //unsigned char *s_ch;
-    unsigned int *SA;
-    unsigned int *LUT;
+    unsigned int *SA = NULL;
+    unsigned int *LUT = NULL;
     
     int encodeSuffix(char * kmer);
 
