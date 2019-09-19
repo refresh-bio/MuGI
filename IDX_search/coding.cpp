@@ -48,6 +48,8 @@ void LoadUInt(unsigned char *dest, uint32_t  &data)
    int32_t encoded_kmer = 0;
    int32_t kmer_pos = 0;
    int32_t charToEncode = LUT_ENCODED_CHARS < len? LUT_ENCODED_CHARS : len ;
+   if(charToEncode > kl)
+        charToEncode = kl;
    int32_t diff = LUT_ENCODED_CHARS - charToEncode;
    int32_t tempCode = 0;
 
