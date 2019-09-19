@@ -26,13 +26,13 @@ private:
     uint32_t no_var;
    // uint32_t data_size;
     
-    BitVectors * bv;
-    VariantList * vl;
-    CFastaFile * fasta;
+    BitVectors * bv = NULL;
+    VariantList * vl = NULL;
+    CFastaFile * fasta = NULL;
     
-    SA1 * sa1;
-    SA2 * sa2;
-    SA3 * sa3;
+    SA1 * sa1 = NULL;
+    SA2 * sa2 = NULL;
+    SA3 * sa3 = NULL;
     
   //  int encodeSuffix(char * kmer);
     
@@ -40,7 +40,11 @@ private:
     
 public:
     SAVariants(){n_sparse = 1;}
-    ~SAVariants(){};
+    ~SAVariants(){
+        if(sa1) {delete sa1; sa1 = NULL;}
+        if(sa2) {delete sa2; sa2 = NULL;}
+        if(sa3) {delete sa3; sa3 = NULL;}
+    }
    
     SAVariants(uint32 _n_sparse){n_sparse = _n_sparse;}
     int make_sa_variants(VariantList * _vl, BitVectors * _bv, CFastaFile * _fasta, uint32_t _kl);
