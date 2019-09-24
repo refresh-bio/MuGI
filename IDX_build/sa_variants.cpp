@@ -52,7 +52,7 @@ int SAVariants::make_sa_variants(VariantList * _vl, BitVectors * _bv, CFastaFile
         
         i++;
     }
-    if(i == 0)
+    i = 0;
     {
         
         if(i > logTreshold)
